@@ -1,6 +1,6 @@
-puts " please input temps"
+puts " Please input temps"
 
-deg = gets.chomp.upcase
+deg=gets.chomp.upcase
 
 value, sign = deg.split(" ")
 
@@ -14,6 +14,6 @@ elsif sign == 'F'
 
 else
 
-	puts "wtf is this man?"
+	puts "WTF is this man?"
 
 end

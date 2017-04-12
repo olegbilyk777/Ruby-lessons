@@ -1,0 +1,1 @@
+puts "Please input temperature"

@@ -6,6 +6,7 @@ class Shape
 		
 		@color = color
 	end
+end
 
 	class Circle < Shape
 
@@ -33,8 +34,6 @@ radius = gets.to_i
 a_circle = Circle.new(radius)
 
 puts "Your circle has an area of #{a_circle.area}"
-
-end
 
 
 class Square < Shape
@@ -64,6 +63,4 @@ a_square = Square.new(parameters)
 
 puts "Your square has an area of #{a_square.area}"
 
-end
 
-end

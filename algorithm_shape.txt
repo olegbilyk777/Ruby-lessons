@@ -1,0 +1,107 @@
+Задача: Написать прогу, кот. читает данные из файла построчно. Данные через запятую.
+Расчет площади S, фигуры-круг, квадрат, треугольник -circle,square,triangle.Ответ выводится на экран.В случае невозможности расчета, выводится сообщение и параметры фигуры.
+Алгоритм:
+                 Ruby                           Псевдокод
+
+class Shape                                    # Создать класс Фигура
+
+attr_accessor :paramA, paramB                  # создать метод установки и чтения для А,В
+
+def initialize(paramA, paramB)                 # Метод инциализир-й внутренние переменные A,B
+
+    @paramA = paramA
+    @paramB = paramB                           # Это переменные экземпляра
+end                                            # Конец цикла
+
+def calcArea                                   # Метод расчета площади
+return @paramA*@paramB                         # Возвращаем значение 
+end                                            # Конец цикла
+
+def calcAreaCircle                             # Метод расчета Sкруга
+return Math::PI*(@paramA**2)                   # Возвращаем значение Sкруга
+end                                            # Конец цикла
+end
+
+class Restangle < Shape                        # Класс квадрат меньше, чем класс фигура
+end                                            # Конец цикла
+
+class Triangle < Shape                         # Класс труегольник меньше, чем класс фигура
+def calcArea                                   # Метод расчета S треугольника
+return super/2                                 # Возвращаем значение S треугольника
+end
+end                                            # Конец цикла
+
+class Circle < Shape                           # Класс круг меньше, чем класс фигура
+end                                            # Конец цикла
+
+def Output(shape, number)                      # Метод
+puts "#{shape[0]}: "                           # Вывести
+(1..number.to_i).each do |i|                   #
+if shape[i+1] == nil                           #
+puts "Can't count. One parameter ismissing"    #Вывести "Рассчитать невозможно.Отсут.один параметр"
+else                                           # Если
+
+className = Object.const_get("#{shape[0]}).new(shape[i].to_i, shape[i+1}.to_i) #
+
+puts className.calcArea                        # Вывести
+end
+end
+end
+
+data = open "sqcalc_src.txt"                   # Открыть файл "sqcalc_src.txt"
+data.each do |line|                            #
+
+shape = line.split("")                         #
+
+number = shape.count.to_i - 1                  #
+
+case.shape[0].downcase                         #
+
+when "restangle"                               #
+      Output(shape, number)                    #
+when "triangle"                                #
+
+      Output(shape, number)                    #
+when "circle"                                  #
+
+  puts "Circle:"                               #
+
+(1..number.to_i).each do |i|                   #
+
+circle = Circle.new(shape[i].to_i, shape[i+1].to_i) #
+
+puts circle.calcAreaCircle                     #
+ 
+end
+end
+end
+
+data.close
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+утв
+
+		
+
+

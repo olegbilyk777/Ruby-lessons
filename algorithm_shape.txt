@@ -11,37 +11,37 @@ def initialize(paramA, paramB)                 # Метод инциализир
 
     @paramA = paramA
     @paramB = paramB                           # Это переменные экземпляра
-end                                            # Конец цикла
+end                                            
 
 def calcArea                                   # Метод расчета площади
 return @paramA*@paramB                         # Возвращаем значение 
-end                                            # Конец цикла
+end                                      
 
 def calcAreaCircle                             # Метод расчета Sкруга
 return Math::PI*(@paramA**2)                   # Возвращаем значение Sкруга
-end                                            # Конец цикла
+end                                            # 
 end
 
-class Restangle < Shape                        # Класс квадрат меньше, чем класс фигура
-end                                            # Конец цикла
+class Restangle < Shape                        # Наследование класса Фигура
+end                                            # 
 
-class Triangle < Shape                         # Класс труегольник меньше, чем класс фигура
+class Triangle < Shape                         # Наследование класса Фигура
 def calcArea                                   # Метод расчета S треугольника
 return super/2                                 # Возвращаем значение S треугольника
 end
-end                                            # Конец цикла
+end                                            # 
 
-class Circle < Shape                           # Класс круг меньше, чем класс фигура
-end                                            # Конец цикла
+class Circle < Shape                           # Наследование класса Фигура
+end                                            # 
 
 def Output(shape, number)                      # Метод
-puts "#{shape[0]}: "                           # Вывести
+puts "#{shape[0]}: "                           # Вывести название
 (1..number.to_i).each do |i|                   #
 if shape[i+1] == nil                           #
 puts "Can't count. One parameter ismissing"    #Вывести "Рассчитать невозможно.Отсут.один параметр"
-else                                           # Если
+else                                           # Если, проверка на наличие двух параметров
 
-className = Object.const_get("#{shape[0]}).new(shape[i].to_i, shape[i+1}.to_i) #
+className = Object.const_get("#{shape[0]}).new(shape[i].to_i, shape[i+1}.to_i) #Формир объекта
 
 puts className.calcArea                        # Вывести
 end
@@ -49,7 +49,7 @@ end
 end
 
 data = open "sqcalc_src.txt"                   # Открыть файл "sqcalc_src.txt"
-data.each do |line|                            #
+data.each do |line|                            #Чтение данных из файла
 
 shape = line.split("")                         #
 
@@ -64,7 +64,7 @@ when "triangle"                                #
       Output(shape, number)                    #
 when "circle"                                  #
 
-  puts "Circle:"                               #
+  puts "Circle:"                               # Вывести "Круг:"
 
 (1..number.to_i).each do |i|                   #
 
@@ -76,7 +76,7 @@ end
 end
 end
 
-data.close
+data.close                                     # Закрыть файл
 
 
 

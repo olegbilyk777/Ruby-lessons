@@ -1,0 +1,9 @@
+circle: 5
+triangle: 7, 8, 10
+rectangle: 5,10
+circle: 6
+triangle: 9, 15, 20
+rectangle: 10,21
+circle: 11
+triangle: 7, 8, 16
+rectangle: 5,10, 25
